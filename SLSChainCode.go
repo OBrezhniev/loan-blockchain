@@ -420,6 +420,10 @@ func populateInitialData(stub shim.ChaincodeStubInterface, args []string) ([]byt
 	_, _ = addParticipant(stub, []string{"9", "JPMorgan Chase & Co", "Bank"})
 	_, _ = addParticipant(stub, []string{"10", "Barclays", "Bank"})
 	_, _ = addParticipant(stub, []string{"11", "Mizuho Bank, Ltd.", "Bank"})
+	_, _ = addParticipant(stub, []string{"12", "SpareBank 1 Nord-Norge", "Bank"})
+	_, _ = addParticipant(stub, []string{"13", "SpareBank 1 Hedemark", "Bank"})
+	_, _ = addParticipant(stub, []string{"14", "SpareBank 1 Modum", "Bank"})
+	_, _ = addParticipant(stub, []string{"15", "Skandinaviska Enskilda Banken AB", "Bank"})
 
 	//Adding users with keys
 	_, _ = addUser(stub, []string{"1", "6", "srbank"})
@@ -446,6 +450,22 @@ func populateInitialData(stub shim.ChaincodeStubInterface, args []string) ([]byt
 	_, _ = addUser(stub, []string{"22", "11", "mizuho_user1"})
 	_, _ = addUser(stub, []string{"23", "11", "mizuho_user2"})
 	_, _ = addUser(stub, []string{"24", "11", "mizuho_user3"})
+	_, _ = addUser(stub, []string{"25", "12", "nordnorge"})
+	_, _ = addUser(stub, []string{"26", "12", "nordnorge_user1"})
+	_, _ = addUser(stub, []string{"27", "12", "nordnorge_user2"})
+	_, _ = addUser(stub, []string{"28", "12", "nordnorge_user3"})
+	_, _ = addUser(stub, []string{"29", "13", "hedemark"})
+	_, _ = addUser(stub, []string{"30", "13", "hedemark_user1"})
+	_, _ = addUser(stub, []string{"31", "13", "hedemark_user2"})
+	_, _ = addUser(stub, []string{"32", "13", "hedemark_user3"})
+	_, _ = addUser(stub, []string{"33", "14", "modum"})
+	_, _ = addUser(stub, []string{"34", "14", "modum_user1"})
+	_, _ = addUser(stub, []string{"35", "14", "modum_user2"})
+	_, _ = addUser(stub, []string{"36", "14", "modum_user3"})
+	_, _ = addUser(stub, []string{"37", "15", "seb"})
+	_, _ = addUser(stub, []string{"38", "15", "seb_user1"})
+	_, _ = addUser(stub, []string{"39", "15", "seb_user2"})
+	_, _ = addUser(stub, []string{"40", "15", "seb_user3"})
 
 	//Accounts
 	_, _ = deleteRowsByColumnValue(stub, []string{AccountsTableName})
@@ -470,7 +490,7 @@ func populateInitialData(stub shim.ChaincodeStubInterface, args []string) ([]byt
 	//Loan Share Negotiation
 	//"InvitationID","ParticipantBankID","Amount","NegotiationStatus", "ParticipantBankComment", "Date"
 	_, _ = deleteRowsByColumnValue(stub, []string{LoanNegotiationsTableName})
-	_, _ = addLoanNegotiation(stub, []string{"1", "6", "200 M USD", "INVITED", "Comment of SpareBank", "11-01-2016"})
+	_, _ = addLoanNegotiation(stub, []string{"1", "6", "200 M USD", "INVITED", "Comment of SpareBank 1 SR-BANK", "11-01-2016"})
 	_, _ = addLoanNegotiation(stub, []string{"1", "9", "100 M USD", "INVITED", "Comment of JPMorgan", "12-01-2016"})
 	_, _ = addLoanNegotiation(stub, []string{"1", "10", "100 M USD", "INVITED", "Comment of Barclays", "12-01-2016"})
 	_, _ = addLoanNegotiation(stub, []string{"2", "7", "250 M USD", "INVITED", "Comment of Nationwide Building Society", "21-01-2016"})
